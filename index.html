@@ -3,7 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock-paper-scissors</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Rock Paper Scissors Game!</h1>
+    </header>
+
+    <div class="scores">
+      <h2>Player:</h2>
+      <span id="player-score">0</span>
+
+      <h2>Computer:</h2>
+      <span id="computer-score">0</span>
+    </div>
+
+    <div class="choices">
+      <button class="rockBtn">&#9994;</button>
+      <button class="paperBtn">&#9995;</button>
+      <button class="scissorsBtn">&#9996;</button>
+    </div>
+
+    <h2 id="demo1">Make your move</h2>
+    <h3 id="demo2">Moves left:</h3>
+    <span id="moves-left">10</span>
+
+    <button class="restartBtn">Restart!</button>
+    <h3 id="result"></h3>
+  </body>
 </html>
