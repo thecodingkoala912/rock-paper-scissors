@@ -27,7 +27,7 @@ function game() {
       button.addEventListener("click", function () {
         const movesLeft = document.getElementById("moves-left");
         moves++;
-        movesLeft.innerText = `${maxMoves - moves}`;
+        movesLeft.innerText = `Moves left: ${maxMoves - moves}`;
 
         const playerSelection = mapEmojiToChoice(this.innerText.trim());
         const computerSelection = getComputerChoice();
@@ -48,6 +48,7 @@ function game() {
   function winner(player, computer) {
     const playerScoreElement = document.getElementById("player-score");
     const computerScoreElement = document.getElementById("computer-score");
+    const demoCommentaryElement=document.getElementById("demo");
 
     if (
       (player === "rock" && computer === "scissors") ||
@@ -55,18 +56,28 @@ function game() {
       (player === "scissors" && computer === "paper")
     ) {
       playerScore++;
-      playerScoreElement.innerText = playerScore;
+      playerScoreElement.innerText = `Player: ${playerScore}`;
+      demoCommentaryElement.innerText=`You won a point!`;
     } else if (player === computer) {
-      console.log("It's a tie!");
+      demoCommentaryElement.innerText=`It's a tie!`;
     } else {
       computerScore++;
-      computerScoreElement.innerText = computerScore;
+      computerScoreElement.innerText =`Computer: ${computerScore}`;
+      demoCommentaryElement.innerText=`The computer won a point!`;
     }
   }
 
   const gameOver = () => {
     const result = document.getElementById("result");
-    result.innerText = `Game Over! Final Score - Player: ${playerScore}, Computer: ${computerScore}`;
+    result.innerText = `Game Over!`;
+
+    if (playerScore > computerScore) {
+        alert("Congratulations! You won!");
+    } else if (computerScore > playerScore) {
+        alert("You lost! Better luck next time.");
+    } else {
+        alert("It's a tie!");
+    }
 
     const buttons = document.querySelectorAll(
       ".rockBtn, .paperBtn, .scissorsBtn"
@@ -74,8 +85,30 @@ function game() {
     buttons.forEach((button) => {
       button.disabled = true;
     });
+};
+
+  const restartGame = () => {
+    playerScore = 0;
+    computerScore = 0;
+    moves = 0;
+
+    
+    document.getElementById("player-score").innerText = `Player: ${playerScore}`;
+    document.getElementById("computer-score").innerText = `Computer: ${computerScore}`;
+    document.getElementById("demo").innerText=`Make your move!`;
+    document.getElementById("moves-left").innerText = `Moves left: ${maxMoves}`;
+    document.getElementById("result").innerText = "";
+
+    
+    const buttons = document.querySelectorAll(".rockBtn, .paperBtn, .scissorsBtn");
+    buttons.forEach((button) => {
+      button.disabled = false;
+    });
   };
 
+
+  const restartBtn = document.querySelector(".restartBtn");
+  restartBtn.addEventListener("click", restartGame);
   playGame();
 }
 
