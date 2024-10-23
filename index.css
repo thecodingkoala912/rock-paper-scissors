@@ -1,0 +1,206 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #202020;
+}
+
+header {
+  background-color: rgb(177, 177, 177);
+  padding: 0.2rem 0;
+  text-align: center;
+  font-family: "Blokeds", sans-serif;
+  font-size: 2.5rem;
+}
+
+.scores {
+  display: flex;
+  width: 100%;
+}
+
+#player-score,
+#computer-score {
+  flex: 1;
+  text-align: center;
+  padding: 2rem 4rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.scores span:first-child {
+  background-color: rgb(38, 255, 0);
+}
+.scores span:last-child {
+  background-color: rgb(255, 0, 0);
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 6rem;
+}
+
+.choices {
+  display: flex;
+  gap: 3rem;
+}
+
+/* Player's buttons */
+.choices button {
+  width: 12rem;
+  height: 12rem;
+  font-size: 8rem;
+  background-color: #333;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choices button:not(.clicked):hover {
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.clicked {
+  box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.computer-choice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#computer-choice {
+  width: 12rem;
+  height: 12rem;
+  font-size: 8rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.computer-glow {
+  box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+#game-over-message {
+  position: fixed; /*  fixed so it covers the whole screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  opacity: 0; /* 0 (completely transparent) to 1 (completely opaque).*/
+  transition: opacity 1s;
+  z-index: 9999;
+}
+#demo {
+  padding: 0.2rem 0;
+  text-align: center;
+  font-size: 3rem;
+  background-color: black;
+  color: white;
+  padding: 2rem 2rem;
+  margin: 0%;
+}
+#moves-left {
+  padding: 0.2rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+  background-color: gray;
+  background-image: linear-gradient(to right, rgb(38, 255, 0), rgb(255, 0, 0));
+  color: rgb(19, 19, 19);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 4rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  position: relative;
+}
+
+.restartBtn {
+  padding: 3rem 6rem;
+  width: 20rem;
+  height: 10rem;
+  font-size: 4rem;
+  background-color: #333;
+  color: white;
+  border-color: #96b500;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restartBtn:hover {
+  background-color: #3f3f3f;
+  box-shadow: 0 12px 16px 0 rgba(225, 255, 0, 0.24),
+    0 17px 50px 0 rgba(241, 211, 21, 0.19);
+}
+
+.arrow {
+  font-size: 6rem;
+  color: rgb(199, 202, 16);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: moveArrow 1s ease-in-out infinite alternate;
+}
+
+.arrow-left {
+  left: 50rem;
+  animation-direction: alternate-reverse;
+}
+
+.arrow-right {
+  right: 50rem;
+  animation-delay: 0.5s;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(1.5rem);
+  }
+}

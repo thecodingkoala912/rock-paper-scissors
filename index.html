@@ -6,6 +6,7 @@
     <title>Rock-paper-scissors</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.cdnfonts.com/css/blokeds" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -18,18 +19,28 @@
       <span id="computer-score">Computer: 0</span>
     </div>
 
-    <div class="choices">
-      <button class="rockBtn">&#9994;</button>
-      <button class="paperBtn">&#9995;</button>
-      <button class="scissorsBtn">&#9996;</button>
+    <div class="game-container">
+      <div class="choices">
+        <button class="rockBtn">&#9994;</button>
+        <button class="paperBtn">&#9995;</button>
+        <button class="scissorsBtn">&#9996;</button>
+      </div>
+
+      <div class="computer-choice-container">
+        <span id="computer-choice">🤖</span>
+      </div>
     </div>
 
     <h2 id="demo">Make your move!</h2>
 
     <span id="moves-left">Moves left: 10</span>
-    
 
-    <button class="restartBtn">Restart!</button>
-    <h1 id="result"></h1>
+    <div class="container">
+      <div class="arrow arrow-left">&rarr;</div>
+      <button class="restartBtn">Restart</button>
+      <div class="arrow arrow-right">&larr;</div>
+    </div>
+
+    <div id="game-over-message" style="display: none">Game Over!</div>
   </body>
 </html>
