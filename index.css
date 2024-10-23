@@ -48,6 +48,8 @@ header {
   align-items: center;
   width: 100%;
   padding: 4rem 6rem;
+  background-color: #776f6f;
+  flex-wrap: wrap;
 }
 
 .choices {
@@ -55,7 +57,6 @@ header {
   gap: 3rem;
 }
 
-/* Player's buttons */
 .choices button {
   width: 12rem;
   height: 12rem;
@@ -84,6 +85,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 10%;
 }
 
 #computer-choice {
@@ -142,6 +144,7 @@ header {
   padding: 2rem 4rem;
   font-size: 2.5rem;
   font-weight: 600;
+  flex-shrink: 0;
 }
 .container {
   display: flex;
@@ -152,9 +155,9 @@ header {
 }
 
 .restartBtn {
-  padding: 3rem 6rem;
+  padding: 2rem 4rem;
   width: 20rem;
-  height: 10rem;
+  height: auto;
   font-size: 4rem;
   background-color: #333;
   color: white;
@@ -166,8 +169,11 @@ header {
   text-align: center;
   cursor: pointer;
   transition-duration: 0.3s;
-  position: relative;
+  position: absolute;
+  top: 10%;
   z-index: 1;
+  margin: 3rem 3 rem;
+  flex-shrink: 1;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -184,15 +190,16 @@ header {
   top: 50%;
   transform: translateY(-50%);
   animation: moveArrow 1s ease-in-out infinite alternate;
+  padding: auto;
 }
 
 .arrow-left {
-  left: 50rem;
+  left: 30%;
   animation-direction: alternate-reverse;
 }
 
 .arrow-right {
-  right: 50rem;
+  right: 30%;
   animation-delay: 0.5s;
 }
 
@@ -202,5 +209,25 @@ header {
   }
   100% {
     transform: translateY(-50%) translateX(1.5rem);
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .arrow-left {
+    left: 20%;
+  }
+
+  .arrow-right {
+    right: 20%;
+  }
+
+  .arrow {
+    font-size: 4rem;
+  }
+
+  .restartBtn {
+    width: 15rem;
+    height: 8rem;
+    font-size: 3rem;
   }
 }
