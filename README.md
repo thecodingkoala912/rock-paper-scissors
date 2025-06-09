@@ -3,7 +3,7 @@
 A fast-paced browser game where you play Rock, Paper, Scissors against the computer! First to score the most points in 10 moves wins.
 
 ## 🎮 Live Demo
- 
+
 ![Game Screenshot](rockPaperScissorsGame.png)
 
 ---
@@ -20,5 +20,32 @@ A fast-paced browser game where you play Rock, Paper, Scissors against the compu
 
 ---
 
-## 📁 File Structure
+## 🕹️ How to Play
+
+1. Click ✊ (Rock), ✋ (Paper), or ✌ (Scissors) to make your move.
+2. The computer shuffles and selects its move.
+3. Scores are updated automatically.
+4. You have **10 moves** to beat the computer!
+5. Click **Restart** to play again.
+
+---
+
+## 💡 Game Logic
+
+* Rock beats Scissors  
+* Paper beats Rock  
+* Scissors beats Paper  
+* Tie if both choose the same  
+
+Each round updates the message and scores based on the result. After 10 moves, the winner is announced via an alert.
+
+---
+
+## 🔉 Game Over Sound
+
+The game plays a sound at the end using:
+
+```js
+const audio = new Audio("C:/Users/User/Desktop/rock-paper-scissors/gameOverSound.wav");
+
 
