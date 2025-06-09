@@ -3,6 +3,7 @@
 A fast-paced browser game where you play Rock, Paper, Scissors against the computer! First to score the most points in 10 moves wins.
 
 ## 🎮 Live Demo
+👉 [Play the game here](https://thecodingkoala912.github.io/rock-paper-scissors/)
 
 ![Game Screenshot](rockPaperScissorsGame.png)
 
