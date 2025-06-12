@@ -41,12 +41,9 @@ function game() {
         callback(finalChoice);
       }, 1000);
     };
-    
-    const clickSound = new Audio("assets/click.wav");
 
     playerChoice.forEach((button) => {
       button.addEventListener("click", function () {
-        clickSound.play();
         playerChoice.forEach((btn) => btn.classList.remove("clicked"));
         this.classList.add("clicked");
 
@@ -116,9 +113,8 @@ function game() {
     gameOverMessage.style.display = "flex";
     gameOverMessage.style.opacity = "1";
 
-    const audio = new Audio(
-      "assets/gameOverSound.wav"
-    );
+    const audio = new Audio("gameOverSound.wav");
+    
     audio.play();
 
     setTimeout(() => {
@@ -130,7 +126,6 @@ function game() {
   };
 
   const restartGame = () => {
-
     playerScore = 0;
     computerScore = 0;
     moves = 0;
