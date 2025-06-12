@@ -5,6 +5,8 @@ function game() {
   const maxMoves = 10;
   const computerChoiceDisplay = document.getElementById("computer-choice");
 
+  const clickSound = new Audio("assets/click.wav");
+  
   const playGame = () => {
     const rockBtn = document.querySelector(".rockBtn");
     const paperBtn = document.querySelector(".paperBtn");
@@ -41,8 +43,6 @@ function game() {
         callback(finalChoice);
       }, 1000);
     };
-    
-    const clickSound = new Audio("assets/click.wav");
 
     playerChoice.forEach((button) => {
       button.addEventListener("click", function () {
@@ -130,7 +130,7 @@ function game() {
   };
 
   const restartGame = () => {
-
+    clickSound.play();
     playerScore = 0;
     computerScore = 0;
     moves = 0;
@@ -160,6 +160,7 @@ function game() {
 
   const restartBtn = document.querySelector(".restartBtn");
   restartBtn.addEventListener("click", restartGame);
+
   playGame();
 }
 
